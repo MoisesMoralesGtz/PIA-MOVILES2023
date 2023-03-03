@@ -9,8 +9,10 @@
     <color name="black">#FF000000</color>
 
     <!--Colores del proyecto -->
+
     <color name="fondoInicio">#596177</color>
     <color name="fondoColor">#333742</color>
+    <color name="marcadoLetras">#D6DEFF</color>
     <color name="letrasColor">#bcc7f6</color>
     <color name="fondoBotones">#5470e9</color>
     <color name="placeHolderColor">#C2C2C2</color>
