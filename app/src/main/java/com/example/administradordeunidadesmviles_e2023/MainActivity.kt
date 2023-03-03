@@ -1,4 +1,4 @@
-gopackage com.example.administradordeunidadesmviles_e2023
+package com.example.administradordeunidadesmviles_e2023
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

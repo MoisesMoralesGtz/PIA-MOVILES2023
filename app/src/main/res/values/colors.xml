@@ -5,11 +5,13 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
 
     <!--Colores del proyecto -->
+    <color name="fondoInicio">#596177</color>
     <color name="fondoColor">#333742</color>
     <color name="letrasColor">#bcc7f6</color>
     <color name="fondoBotones">#5470e9</color>
-    <color name="blanco">#FFFFFFFF</color>
-    <color name="negro">#FF000000</color>
+    <color name="placeHolderColor">#C2C2C2</color>
 </resources>
