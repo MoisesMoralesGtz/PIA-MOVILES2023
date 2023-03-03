@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AdministradorDeUnidadesMóviles-E2023</string>
+    <string name="pseudohiperlink"><u>¿No tienes una cuenta?, ¡create una!</u></string>
 </resources>
