@@ -100,28 +100,29 @@
         android:id="@+id/btnIngresar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="68dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="76dp"
         android:background="@drawable/btn_continuar"
         android:fontFamily="@font/sublima_bold"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
 
         android:text="Ingresar"
         android:textColor="@drawable/btn_continuar_texto"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="49dp" />
 
-    <TextView
+    <Button
         android:id="@+id/txtNuevaCuenta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textAllCaps="false"
+        android:background="@null"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/sublima_light"
         android:text="@string/pseudohiperlink"
         android:textAlignment="center"
-        android:textColor="@android:color/white"
+        android:textColor="@drawable/pseudo_hiperlink"
         android:textColorHint="@color/placeHolderColor"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
