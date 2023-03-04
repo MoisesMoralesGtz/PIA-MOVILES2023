@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_pantallas"
+    tools:context=".nuevo_usuario">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sublima_bold"
+        android:text="Nuevo\nUSuario"
+        android:textAlignment="center"
+        android:textColor="@color/letrasColor"
+
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.055" />
+
+    <TextView
+        android:id="@+id/txtNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sublima_bold"
+        android:text="Nombre Completo:"
+        android:textAlignment="center"
+
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.099" />
+
+    <EditText
+        android:id="@+id/inputNombre"
+        android:layout_width="302dp"
+        android:layout_height="60dp"
+
+        android:background="@drawable/estilo_inputs"
+        android:fontFamily="@font/sublima_light"
+        android:hint="ej. Jose2023"
+        android:inputType="textPersonName"
+        android:maxLength="15"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/placeHolderColor"
+        android:textCursorDrawable="@drawable/cursor_color"
+
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombre" />
+
+
+    <TextView
+        android:id="@+id/txtUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sublima_bold"
+        android:text="Nombre de Usario:"
+
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputNombre" />
+
+    <EditText
+        android:id="@+id/inputUser"
+        android:layout_width="302dp"
+        android:layout_height="60dp"
+
+        android:layout_marginTop="4dp"
+        android:background="@drawable/estilo_inputs"
+        android:fontFamily="@font/sublima_light"
+        android:hint="----"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/placeHolderColor"
+
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtUser" />
+
+    <TextView
+        android:id="@+id/txtContra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/sublima_bold"
+
+        android:text="Contraseña:"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputUser" />
+
+    <EditText
+        android:id="@+id/inputContra"
+        android:layout_width="302dp"
+        android:layout_height="60dp"
+
+        android:background="@drawable/estilo_inputs"
+        android:fontFamily="@font/sublima_light"
+        android:hint="----"
+        android:inputType="textPassword"
+        android:maxLength="15"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/placeHolderColor"
+
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="35sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtContra" />
+
+    <Button
+        android:id="@+id/btnIngresar"
+        android:layout_width="160dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_continuar"
+
+        android:fontFamily="@font/sublima_bold"
+        android:text="Ingresar"
+        android:textColor="@drawable/btn_continuar_texto"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="150dp"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_continuar"
+        android:fontFamily="@font/sublima_bold"
+
+        android:text="Volver"
+        android:textColor="@drawable/btn_continuar_texto"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnIngresar"
+        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
