@@ -16,4 +16,8 @@
     <color name="letrasColor">#bcc7f6</color>
     <color name="fondoBotones">#5470e9</color>
     <color name="placeHolderColor">#C2C2C2</color>
+
+    <color name="regresarBoton">#F87E7E</color>
+    <color name="regresarLetras">#650000</color>
+    <color name="regresarActivado">#FFD9D9</color>
 </resources>
