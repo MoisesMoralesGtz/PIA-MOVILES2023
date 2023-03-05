@@ -15,4 +15,14 @@
     <string name="ubicacion"><i><b>Ubicación de la Unidad:</b></i></string>
     <string name="gasolina"><i><b>Nivel de Gasolina:</b></i></string>
 
+    <!--Detalles Avanzados -->
+    <string name="neumaticos"><i><b>Estado de los Neumáticos:</b></i></string>
+    <string name="carroceria"><i><b>Carrocería:</b></i></string>
+    <string name="interiores"><i><b>Limpieza de los Interiores:</b></i></string>
+    <string name="Ultimo"><i><b>Último chequeo de Aceites:</b></i></string>
+    <string name="kilometraje"><i><b>Kilometraje:</b></i></string>
+
+
+
+
 </resources>
