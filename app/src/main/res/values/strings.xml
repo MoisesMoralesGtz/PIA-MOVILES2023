@@ -28,4 +28,9 @@
     <string name="nUnidades"><i><b>Añadir Nuevas Unidades:</b></i></string>
     <string name="eUnidades"><i><b>Unidades Existentes:</b></i></string>
 
+
+    <string name="nombre"><i><b>Nombre Completo:</b></i></string>
+    <string name="user"><i><b>Nombre de Usuario:</b></i></string>
+    <string name="pass"><i><b>Contraseña:</b></i></string>
+    <string name="tipo"><i><b>Tipo de Cuenta:</b></i></string>
 </resources>
