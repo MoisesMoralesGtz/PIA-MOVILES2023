@@ -8,4 +8,11 @@
     <string name="dropDownSelect"><i>Seleccione una cuenta</i></string>
     <string name="dropDownSelectUnidad"><i>Seleccione una Unidad</i></string>
 
+
+    <!-- Estado Unidades-->
+    <string name="placas"><i><b>Placas de la Unidad:</b></i></string>
+    <string name="chofer"><i><b>Chofer Actual:</b></i></string>
+    <string name="ubicacion"><i><b>Ubicación de la Unidad:</b></i></string>
+    <string name="gasolina"><i><b>Nivel de Gasolina:</b></i></string>
+
 </resources>
