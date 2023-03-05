@@ -4,5 +4,8 @@
     <string name="pseudohiperlink"><u><i><b>¿No tienes una cuenta?, ¡create una!</b> </i></u></string>
     <string name="nCuentas"><i><b>Nuevas Cuentas:</b></i></string>
     <string name="eCuentas"><i><b>Cuentas Existentes:</b></i></string>
+    <string name="unidadesD"><i><b>Unidades Disponibles:</b></i></string>
     <string name="dropDownSelect"><i>Seleccione una cuenta</i></string>
+    <string name="dropDownSelectUnidad"><i>Seleccione una Unidad</i></string>
+
 </resources>
