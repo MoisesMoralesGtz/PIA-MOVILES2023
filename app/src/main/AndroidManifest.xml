@@ -12,7 +12,7 @@
         android:theme="@style/Theme.AdministradorDeUnidadesMóvilesE2023"
         tools:targetApi="31">
         <activity
-            android:name=".cuenta_existente"
+            android:name=".unidad_existente"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,13 +20,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".cuenta_existente"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".solicitud_nuevas_cuentas"
             android:exported="false" />
         <activity
             android:name=".administrar_unidades"
-            android:exported="true">
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".imagenes_unidad"
             android:exported="true" />
