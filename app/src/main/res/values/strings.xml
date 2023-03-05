@@ -6,6 +6,8 @@
     <string name="eCuentas"><i><b>Cuentas Existentes:</b></i></string>
     <string name="unidadesD"><i><b>Unidades Disponibles:</b></i></string>
     <string name="dropDownSelect"><i>Seleccione una cuenta</i></string>
+
+
     <string name="dropDownSelectUnidad"><i>Seleccione una Unidad</i></string>
 
 
@@ -22,5 +24,8 @@
     <string name="Ultimo"><i><b>Último chequeo de Aceites:</b></i></string>
     <string name="kilometraje"><i><b>Kilometraje:</b></i></string>
 
+
+    <string name="nUnidades"><i><b>Añadir Nuevas Unidades:</b></i></string>
+    <string name="eUnidades"><i><b>Unidades Existentes:</b></i></string>
 
 </resources>
