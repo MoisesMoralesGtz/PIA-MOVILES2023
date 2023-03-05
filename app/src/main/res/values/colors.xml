@@ -19,5 +19,5 @@
 
     <color name="regresarBoton">#F87E7E</color>
     <color name="regresarLetras">#650000</color>
-    <color name="regresarActivado">#FFD9D9</color>
+    <color name="regresarActivado">#F87E7E</color>
 </resources>
