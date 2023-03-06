@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_pantallas"
+    tools:context=".inicio_turno_empleado">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sublima_bold"
+        android:text="Inicio de Turno"
+        android:textAlignment="center"
+        android:textColor="@color/letrasColor"
+
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <TextView
+        android:id="@+id/lblPlacas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:fontFamily="@font/sublima_light"
+
+        android:text="@string/placas"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/lblNeumaticos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/lblNeumaticos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:fontFamily="@font/sublima_light"
+
+        android:text="@string/neumaticos"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/lblCarro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtPlacas"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/estilo_inputs"
+
+        android:hint="@string/dropdownPlacas"
+        android:inputType="none"
+        android:paddingTop="2dp"
+
+        android:textColorHint="@color/white"
+        android:theme="@style/Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblPlacas">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/fieldLimpieza"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20px"
+            android:fontFamily="@font/sublima_light"
+
+            android:inputType="none"
+            android:paddingLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayoutECUENTA"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginHorizontal="40dp"
+
+        android:background="@drawable/estilo_inputs"
+        android:hint="@string/dropdownOption"
+        android:inputType="none"
+        android:paddingTop="2dp"
+
+        android:textColorHint="@color/white"
+        android:theme="@style/Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNeumaticos">
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdown_fieldECUENTA"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="20px"
+            android:paddingLeft="10dp"
+            android:fontFamily="@font/sublima_light"
+            android:inputType="none"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/lblCarro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="76dp"
+        android:fontFamily="@font/sublima_light"
+
+        android:text="@string/carroceria"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/lblLimpieza"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtCarro"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/estilo_inputs"
+        android:hint="@string/dropdownOption"
+
+        android:layout_marginTop="2dp"
+
+        android:inputType="none"
+        android:paddingTop="2dp"
+        android:textColorHint="@color/white"
+
+        android:theme="@style/Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblCarro">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/dropdown_fieldNCUENTA"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20px"
+            android:paddingLeft="10dp"
+            android:fontFamily="@font/sublima_light"
+            android:inputType="none"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/lblLimpieza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/sublima_light"
+        android:text="@string/interiores"
+
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/btnVolver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.628" />
+
+    <TextView
+        android:id="@+id/lblNivel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/sublima_light"
+
+        android:text="@string/gasolina"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblLimpieza" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtLimpieza"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="40dp"
+        android:background="@drawable/estilo_inputs"
+        android:hint="@string/dropdownOption"
+        android:layout_marginTop="2dp"
+
+        android:inputType="none"
+        android:paddingTop="2dp"
+        android:textColorHint="@color/white"
+
+        android:theme="@style/Spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblLimpieza">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/dropDownLimpieza"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20px"
+            android:paddingLeft="10dp"
+            android:fontFamily="@font/sublima_light"
+            android:inputType="none"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/lblGasolina"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/sublima_light"
+
+        android:text="@string/kilometraje"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblNivel" />
+
+    <EditText
+        android:id="@+id/inputNombre"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:layout_marginHorizontal="40dp"
+
+        android:background="@drawable/estilo_inputs"
+        android:fontFamily="@font/sublima_light"
+        android:hint="123151231"
+        android:inputType="textPersonName"
+        android:maxLength="15"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textColorHint="@color/placeHolderColor"
+        android:textCursorDrawable="@drawable/cursor_color"
+
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblGasolina" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_regresar"
+        android:fontFamily="@font/sublima_bold"
+
+        android:text="Volver"
+        android:textColor="@drawable/btn_regresar_texto"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
