@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding.txtNuevaCuenta.setOnClickListener {
             val intent = Intent(this, nuevo_usuario::class.java)
             startActivity(intent)
-            overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out)
+            overridePendingTransition(R.anim.from_down_in, R.anim.from_up_out)
         }
     }
 }
