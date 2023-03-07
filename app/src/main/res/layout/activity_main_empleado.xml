@@ -32,7 +32,7 @@
         android:background="@drawable/btn_continuar"
 
         android:fontFamily="@font/sublima_bold"
-        android:text="Estado de las Unidades"
+        android:text="Inicio del Turno"
         android:textColor="@drawable/btn_continuar_texto"
         android:textSize="20sp"
 

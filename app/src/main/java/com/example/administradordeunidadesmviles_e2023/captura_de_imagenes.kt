@@ -13,7 +13,7 @@ class captura_de_imagenes : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnContinuar.setOnClickListener{
-            val intent = Intent(this, inicio_turno_empleado::class.java)
+            val intent = Intent(this, main_empleado::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
         }
