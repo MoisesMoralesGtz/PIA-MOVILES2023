@@ -12,6 +12,12 @@ class administrar_unidades : AppCompatActivity() {
         binding = ActivityAdministrarUnidadesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnEstadoU.setOnClickListener{
+            val intent = Intent(this, nueva_unidad::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+        }
+
         binding.btnCerrarSesion.setOnClickListener{
             val intent = Intent(this, main_administrador::class.java)
             startActivity(intent)
