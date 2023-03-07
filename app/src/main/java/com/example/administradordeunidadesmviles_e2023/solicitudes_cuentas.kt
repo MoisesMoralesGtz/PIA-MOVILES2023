@@ -13,6 +13,20 @@ class solicitudes_cuentas : AppCompatActivity() {
         binding = ActivitySolicitudesCuentasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.textInputLayoutECUENTA.setOnClickListener{
+            val intent = Intent(this, cuenta_existente::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+        }
+
+        binding.textInputLayoutNCUENTA.setOnClickListener{
+            val intent = Intent(this, solicitud_nuevas_cuentas::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+        }
+
+
+
         binding.btnVolver.setOnClickListener{
             val intent = Intent(this, main_administrador::class.java)
             startActivity(intent)
