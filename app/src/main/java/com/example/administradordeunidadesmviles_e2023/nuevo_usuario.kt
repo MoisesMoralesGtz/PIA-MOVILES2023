@@ -12,6 +12,12 @@ class nuevo_usuario : AppCompatActivity() {
         binding = ActivityNuevoUsuarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnIngresar.setOnClickListener {
+            val intent = Intent(this, main_empleado::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+        }
+
         binding.btnVolver.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
