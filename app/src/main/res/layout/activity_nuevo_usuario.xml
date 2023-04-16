@@ -49,7 +49,7 @@
         android:fontFamily="@font/sublima_light"
         android:hint="ej. Juan Hernández Gómez"
         android:inputType="textPersonName"
-        android:maxLength="15"
+        android:maxLength="30"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textColorHint="@color/placeHolderColor"
