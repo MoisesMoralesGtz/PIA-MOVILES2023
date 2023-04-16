@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityMainBinding
+import com.example.administradordeunidadesmviles_e2023.ValoresGlobales
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -13,9 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnIngresar.setOnClickListener{
+            val objeto = ValoresGlobales()
+
+            objeto.testImprime()
+
             val intent = Intent(this, main_administrador::class.java)
             startActivity(intent)
             overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+
         }
 
         binding.txtNuevaCuenta.setOnClickListener {
