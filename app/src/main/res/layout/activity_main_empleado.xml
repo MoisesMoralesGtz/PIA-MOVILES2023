@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.055"
         tools:ignore="MissingClass" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnInicioFinTurno"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,7 +43,7 @@
         app:layout_constraintVertical_bias="0.28"
         tools:layout_editor_absoluteX="0dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnCerrarSesion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

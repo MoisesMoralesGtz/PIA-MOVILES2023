@@ -208,7 +208,7 @@
         app:layout_constraintStart_toEndOf="@+id/btnVolver"
         app:srcCompat="@drawable/camera_svg" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVolver"
         android:layout_width="wrap_content"
 

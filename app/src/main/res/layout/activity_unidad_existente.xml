@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.056" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEliminarCuenta"
         android:layout_width="wrap_content"
 
@@ -121,7 +121,7 @@
         app:layout_constraintTop_toBottomOf="@+id/lblChofer"
         tools:layout_editor_absoluteX="130dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
 
