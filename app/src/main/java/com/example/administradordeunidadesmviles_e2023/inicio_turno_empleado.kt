@@ -30,7 +30,8 @@ class inicio_turno_empleado : AppCompatActivity() {
             binding.lblGasolina.visibility = View.VISIBLE
             binding.inputKilometraje.visibility = View.VISIBLE
 
-
+            binding.lblNivel.visibility = View.VISIBLE
+            binding.sliderGas.visibility = View.VISIBLE
         }
 
         //Arreglos

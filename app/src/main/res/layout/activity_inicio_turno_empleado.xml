@@ -13,11 +13,11 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/sublima_bold"
         android:text="Inicio de Turno"
+        android:layout_marginTop="40dp"
         android:textAlignment="center"
         android:textColor="@color/letrasColor"
 
         android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -188,17 +188,17 @@
         android:fontFamily="@font/sublima_light"
         android:text="@string/interiores"
 
-        android:visibility="invisible"
-
         android:textAlignment="center"
+
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btnVolver"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.628" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.55" />
 
     <TextView
         android:id="@+id/lblNivel"
@@ -206,6 +206,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:fontFamily="@font/sublima_light"
+
+        android:visibility="invisible"
 
         android:text="@string/gasolina"
         android:textAlignment="center"
@@ -218,6 +220,8 @@
 
 
     <com.google.android.material.slider.Slider
+        android:id="@+id/sliderGas"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -226,18 +230,26 @@
         android:valueFrom="0"
         android:valueTo="10"
 
+        android:visibility="invisible"
+
         app:layout_constraintTop_toBottomOf="@+id/lblNivel"
 
+        app:thumbColor="@color/white"
         app:thumbElevation="10dp"
         app:thumbRadius="10dp"
+
+        app:tickColorInactive="@color/fondoBotones"
+        app:tickColorActive="@color/white"
+        app:haloColor="@color/fondoInicio"
+
+        app:trackColorActive="@color/fondoBotones"
+        app:trackColorInactive="@color/letrasColor"
+
+
         app:trackHeight="5dp"
 
-        app:thumbColor="@color/white"
-        app:tickColor="@color/fondoBotones"
-        app:trackColor="@color/letrasColor"
-
         tools:ignore="SpeakableTextPresentCheck"
-        tools:layout_editor_absoluteX="40dp" />
+        tools:layout_editor_absoluteX="30dp" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LimpiezaBox"
