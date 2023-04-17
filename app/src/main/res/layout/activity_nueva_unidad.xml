@@ -98,7 +98,7 @@
 
 
         <AutoCompleteTextView
-            android:id="@+id/dropdown_fieldNCUENTA"
+            android:id="@+id/dropCarroceriaNuevo"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="20px"

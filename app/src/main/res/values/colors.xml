@@ -20,4 +20,11 @@
     <color name="regresarBoton">#F87E7E</color>
     <color name="regresarLetras">#650000</color>
     <color name="regresarActivado">#F0C7C7</color>
+
+    <color name="DisGray">#707070</color>
+
+    <color name="fondoContinuar">#A5FFAE</color>
+    <color name="letrasContinuar">#5B8858</color>
+
+
 </resources>

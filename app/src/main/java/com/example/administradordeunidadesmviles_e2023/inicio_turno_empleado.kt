@@ -49,7 +49,7 @@ class inicio_turno_empleado : AppCompatActivity() {
         binding.dropPlacas.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
 
-            val SelectPlacas = adapterView.getItemAtPosition(i).toString()
+            SelectPlacas = adapterView.getItemAtPosition(i).toString()
             Toast.makeText(this,SelectPlacas,Toast.LENGTH_SHORT).show()
 
             //Linea para hacer que aparezcan todos los demas drops
@@ -62,7 +62,7 @@ class inicio_turno_empleado : AppCompatActivity() {
         binding.dropNeumatico.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
 
-            val EstadoNeumaticos = adapterView.getItemAtPosition(i).toString()
+            EstadoNeumaticos = adapterView.getItemAtPosition(i).toString()
             Toast.makeText(this,EstadoNeumaticos,Toast.LENGTH_SHORT).show()
         }
 
@@ -73,7 +73,7 @@ class inicio_turno_empleado : AppCompatActivity() {
         binding.dropCarroceria.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
 
-            val EstadoCarroceria = adapterView.getItemAtPosition(i).toString()
+            EstadoCarroceria = adapterView.getItemAtPosition(i).toString()
             Toast.makeText(this,EstadoCarroceria,Toast.LENGTH_SHORT).show()
         }
 
@@ -85,7 +85,7 @@ class inicio_turno_empleado : AppCompatActivity() {
         binding.dropLimpieza.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
 
-            val EstadoLimpieza = adapterView.getItemAtPosition(i).toString()
+            EstadoLimpieza = adapterView.getItemAtPosition(i).toString()
             Toast.makeText(this,EstadoLimpieza,Toast.LENGTH_SHORT).show()
         }
 

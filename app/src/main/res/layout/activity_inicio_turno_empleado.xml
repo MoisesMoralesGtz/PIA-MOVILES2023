@@ -315,9 +315,9 @@
 
         android:background="@drawable/estilo_inputs"
         android:fontFamily="@font/sublima_light"
-        android:hint="123151231"
+        android:hint="151,231"
         android:inputType="number"
-        android:maxLength="15"
+        android:maxLength="7"
         android:textAlignment="center"
         android:textColor="@android:color/white"
         android:textColorHint="@color/placeHolderColor"

@@ -153,7 +153,7 @@
 
 
         <AutoCompleteTextView
-            android:id="@+id/dropdown_fieldNCUENTA"
+            android:id="@+id/dropTipoCuenta"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="20px"
@@ -170,11 +170,11 @@
 
         android:layout_height="40dp"
 
-        android:layout_marginStart="64dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="28dp"
         android:background="@drawable/btn_continuar"
         android:fontFamily="@font/sublima_bold"
-        android:paddingHorizontal="20sp"
+        android:paddingHorizontal="40sp"
         android:text="Rechazar"
         android:textColor="@drawable/btn_continuar_texto"
         android:textSize="15sp"
@@ -184,16 +184,16 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAceptar"
         android:layout_width="wrap_content"
-
+        android:enabled="false"
         android:layout_height="40dp"
 
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="64dp"
-        android:background="@drawable/btn_continuar"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/btn_confirmar"
         android:fontFamily="@font/sublima_bold"
-        android:paddingHorizontal="20sp"
+        android:paddingHorizontal="40sp"
         android:text="Aceptar"
-        android:textColor="@drawable/btn_continuar_texto"
+        android:textColor="@drawable/btn_confirmar_textp"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNCUENTA" />
