@@ -49,23 +49,26 @@
         android:layout_marginBottom="76dp"
         android:fontFamily="@font/sublima_light"
 
+        android:visibility="invisible"
+
         android:text="@string/neumaticos"
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblCarro"
+        app:layout_constraintBottom_toTopOf="@+id/lblCarroceria"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtPlacas"
+        android:id="@+id/PlacasBox"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="40dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/estilo_inputs"
+
 
         android:hint="@string/dropdownPlacas"
         android:inputType="none"
@@ -82,9 +85,9 @@
             android:id="@+id/dropPlacas"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+
             android:layout_marginBottom="20px"
             android:fontFamily="@font/sublima_light"
-
             android:inputType="none"
             android:paddingLeft="10dp"
             android:textColor="@color/white"
@@ -92,6 +95,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/NeumaticosBox"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -101,6 +105,7 @@
         android:hint="@string/dropdownOption"
         android:paddingTop="2dp"
 
+        android:visibility="invisible"
 
         android:textColorHint="@color/white"
         android:theme="@style/Spinner"
@@ -123,11 +128,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/lblCarro"
+        android:id="@+id/lblCarroceria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="76dp"
         android:fontFamily="@font/sublima_light"
+
+        android:visibility="invisible"
 
         android:text="@string/carroceria"
         android:textAlignment="center"
@@ -139,7 +146,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtCarro"
+        android:id="@+id/CarroceriaBox"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -149,6 +156,8 @@
 
         android:layout_marginTop="2dp"
 
+        android:visibility="invisible"
+
         android:inputType="none"
         android:paddingTop="2dp"
         android:textColorHint="@color/white"
@@ -156,7 +165,7 @@
         android:theme="@style/Spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblCarro">
+        app:layout_constraintTop_toBottomOf="@+id/lblCarroceria">
 
 
         <AutoCompleteTextView
@@ -178,6 +187,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/sublima_light"
         android:text="@string/interiores"
+
+        android:visibility="invisible"
 
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -205,19 +216,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblLimpieza" />
 
+
+    <com.google.android.material.slider.Slider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:stepSize="1.0"
+        android:value="5"
+        android:valueFrom="0"
+        android:valueTo="10"
+
+        app:layout_constraintTop_toBottomOf="@+id/lblNivel"
+
+        app:thumbElevation="10dp"
+        app:thumbRadius="10dp"
+        app:trackHeight="5dp"
+
+        app:thumbColor="@color/white"
+        app:tickColor="@color/fondoBotones"
+        app:trackColor="@color/letrasColor"
+
+        tools:ignore="SpeakableTextPresentCheck"
+        tools:layout_editor_absoluteX="40dp" />
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/txtLimpieza"
+        android:id="@+id/LimpiezaBox"
+
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginHorizontal="40dp"
         android:background="@drawable/estilo_inputs"
+        android:gravity="center_horizontal"
         android:hint="@string/dropdownOption"
-        android:layout_marginTop="2dp"
+        android:layout_marginTop="0dp"
 
         android:inputType="none"
         android:paddingTop="2dp"
         android:textColorHint="@color/white"
+
+        android:visibility="invisible"
 
         android:theme="@style/Spinner"
         app:layout_constraintEnd_toEndOf="parent"
@@ -244,6 +282,8 @@
         android:layout_marginTop="60dp"
         android:fontFamily="@font/sublima_light"
 
+        android:visibility="invisible"
+
         android:text="@string/kilometraje"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -254,10 +294,12 @@
         app:layout_constraintTop_toBottomOf="@+id/lblNivel" />
 
     <EditText
-        android:id="@+id/inputNombre"
+        android:id="@+id/inputKilometraje"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginHorizontal="40dp"
+
+        android:visibility="invisible"
 
         android:background="@drawable/estilo_inputs"
         android:fontFamily="@font/sublima_light"
@@ -284,6 +326,8 @@
         android:layout_marginBottom="40dp"
         android:background="@drawable/btn_regresar"
         android:fontFamily="@font/sublima_bold"
+
+        android:theme="@style/Slider"
 
         android:text="Volver"
         android:textColor="@drawable/btn_regresar_texto"
