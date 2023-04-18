@@ -7,6 +7,8 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityNuevaUnidadBinding
@@ -39,12 +41,10 @@ class nueva_unidad : AppCompatActivity() {
 
         binding.btnContinuar.setOnClickListener {
 
-
             val dialogBinding=layoutInflater.inflate(R.layout.alertas_para_usuarios,null)
             val myDialog = Dialog(this)
 
             myDialog.setContentView(dialogBinding)
-
             myDialog.setCancelable(false)
 
             val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
@@ -56,7 +56,6 @@ class nueva_unidad : AppCompatActivity() {
             myDialog.show()
 
 
-
             //Codigo de las opciones
 
 
@@ -65,6 +64,17 @@ class nueva_unidad : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
             */
+            val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
+            val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
+
+            titulo.text="AGUAS!!"
+            texto.text="TILINES FC"
+
+            //Codigo de alertas
+            val BtnClose = dialogBinding.findViewById<Button>(R.id.btnCerrarz)
+            BtnClose.setOnClickListener{
+                myDialog.dismiss()
+            }
         }
 
         binding.btnVolver.setOnClickListener{
