@@ -8,4 +8,10 @@ class ValoresGlobales{
         Log.d("MiApp", "Este es un mensaje de depuración")
     }
 
+
+    fun llamaDialog(){
+
+
+    }
+
 }
