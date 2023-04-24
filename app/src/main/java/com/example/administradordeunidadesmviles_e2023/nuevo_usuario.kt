@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 class nuevo_usuario : AppCompatActivity() {
     private lateinit var binding:ActivityNuevoUsuarioBinding
     private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNuevoUsuarioBinding.inflate(layoutInflater)
