@@ -4,9 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityMainAdministradorBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class main_administrador : AppCompatActivity() {
     private lateinit var binding: ActivityMainAdministradorBinding
+    private lateinit var firebaseAuth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainAdministradorBinding.inflate(layoutInflater)
