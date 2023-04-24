@@ -1,10 +1,15 @@
 package com.example.administradordeunidadesmviles_e2023
 
+import android.app.Dialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivitySolicitudNuevasCuentasBinding
 
@@ -39,16 +44,90 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
         }
 
 
-        binding.btnRechazar.setOnClickListener {
-            val intent = Intent(this, solicitudes_cuentas::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out)
+        binding.btnRechazar.setOnClickListener{
+            val dialogBinding=layoutInflater.inflate(R.layout.alertas_para_usuarios,null)
+            val myDialog = Dialog(this)
+
+            myDialog.setContentView(dialogBinding)
+            myDialog.setCancelable(false)
+
+            //Texto del Dialog
+            val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
+            val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
+
+            titulo.text="Atención"
+            texto.text="Si declinas una solicitud, el interesado tendrá que volver a realizar la solicitud de cuenta, esta seguro de rechazar la solicitud de:\nEjemplo"
+
+            //Dimensiones del Dialog
+            val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
+            val height = (resources.displayMetrics.heightPixels * 0.40).toInt()
+
+            myDialog.window?.setLayout(width, height)
+            myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            myDialog.show()
+
+            //Botones del Dialog
+            val BtnClose = dialogBinding.findViewById<Button>(R.id.btnCerrarz)
+            BtnClose.setOnClickListener{
+                //Cancelar
+                myDialog.dismiss()
+            }
+
+            val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
+
+            Seguir.setOnClickListener{
+                val intent = Intent(this, solicitudes_cuentas::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out)
+
+                Toast.makeText(this,"Solicitud rechazada con éxito",Toast.LENGTH_SHORT).show()
+            }
+
+
         }
 
         binding.btnAceptar.setOnClickListener {
-            val intent = Intent(this, solicitudes_cuentas::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+            val dialogBinding=layoutInflater.inflate(R.layout.alertas_para_usuarios,null)
+            val myDialog = Dialog(this)
+
+            myDialog.setContentView(dialogBinding)
+            myDialog.setCancelable(false)
+
+            //Texto del Dialog
+            val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
+            val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
+
+            titulo.text="Atención"
+            texto.text="Está apunto de aceptar la solicitud, esta accion no se puede modificar, por favor, verifque que el nombre y permisos sean los correctos:\nUsuario: Manuel\nPermisos: Empleado"
+
+            //Dimensiones del Dialog
+            val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
+            val height = (resources.displayMetrics.heightPixels * 0.45).toInt()
+
+            myDialog.window?.setLayout(width, height)
+            myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+            myDialog.show()
+
+            //Botones del Dialog
+            val BtnClose = dialogBinding.findViewById<Button>(R.id.btnCerrarz)
+            BtnClose.setOnClickListener{
+                //Cancelar
+                myDialog.dismiss()
+            }
+
+            val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
+
+            Seguir.setOnClickListener{
+                //Continuar
+                val intent = Intent(this, solicitudes_cuentas::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+
+                Toast.makeText(this,"Solicitud aceptada con éxito",Toast.LENGTH_SHORT).show()
+            }
+
         }
 
         binding.btnVolver.setOnClickListener {

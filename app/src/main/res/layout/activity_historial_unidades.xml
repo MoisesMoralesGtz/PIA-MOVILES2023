@@ -58,7 +58,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutNCUENTA"
+
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -79,7 +79,7 @@
 
 
         <AutoCompleteTextView
-            android:id="@+id/dropdown_fieldNCUENTA"
+            android:id="@+id/dropPlacas"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginBottom="20px"

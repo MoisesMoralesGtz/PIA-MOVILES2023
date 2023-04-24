@@ -36,15 +36,17 @@ class inicio_turno_empleado : AppCompatActivity() {
 
         //Arreglos
         val arrayOpciones=listOf("Perfecto","Bueno","Malo","Muy Malo")
+        val arrayPlacas=listOf("33 - ASDF - 22","33 - ASDF - 22","33 - ASDF - 22","33 - ASDF - 22")
 
         //Adapter
         val adapter = ArrayAdapter(this, R.layout.elemento_lista,arrayOpciones)
+        val adapterPlacas = ArrayAdapter(this, R.layout.elemento_lista,arrayPlacas)
 
         //Seteo de DropDownMenus
 
         //Placas
         var SelectPlacas=""
-        binding.dropPlacas.setAdapter(adapter)
+        binding.dropPlacas.setAdapter(adapterPlacas)
 
         binding.dropPlacas.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->

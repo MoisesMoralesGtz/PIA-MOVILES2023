@@ -126,7 +126,7 @@
 
 
     <AutoCompleteTextView
-        android:id="@+id/dropdown_fieldNCUENTA"
+        android:id="@+id/dropNueva"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="20px"
@@ -159,7 +159,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtUser">
 
         <AutoCompleteTextView
-            android:id="@+id/dropdown_fieldECUENTA"
+            android:id="@+id/dropExistente"
             android:layout_width="match_parent"
             android:fontFamily="@font/sublima_light"
             android:layout_height="60dp"

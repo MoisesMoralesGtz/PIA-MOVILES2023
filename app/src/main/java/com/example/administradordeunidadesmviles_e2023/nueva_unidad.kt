@@ -40,41 +40,44 @@ class nueva_unidad : AppCompatActivity() {
         }
 
         binding.btnContinuar.setOnClickListener {
-
             val dialogBinding=layoutInflater.inflate(R.layout.alertas_para_usuarios,null)
             val myDialog = Dialog(this)
 
             myDialog.setContentView(dialogBinding)
             myDialog.setCancelable(false)
 
-            val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
-            val height = (resources.displayMetrics.heightPixels * 0.40).toInt()
+            //Texto del Dialog
+            val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
+            val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
 
-            myDialog.getWindow()?.setLayout(width, height)
+            titulo.text="Atención"
+            texto.text="Está a punto de declarar una nueva unidad, por favor, asegurese que los datos ingresados son correctos:\n Placas: XXXXXX\nCarroceria: Buena\nKilometraje: 93943"
+
+            //Dimensiones del Dialog
+            val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
+            val height = (resources.displayMetrics.heightPixels * 0.50).toInt()
+
+            myDialog.window?.setLayout(width, height)
             myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
             myDialog.show()
 
-
-            //Codigo de las opciones
-
-
-            /*
-            val intent = Intent(this, administrar_unidades::class.java)
-            startActivity(intent)
-            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
-            */
-            val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
-            val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
-
-            titulo.text="AGUAS!!"
-            texto.text="TILINES FC"
-
-            //Codigo de alertas
+            //Botones del Dialog
             val BtnClose = dialogBinding.findViewById<Button>(R.id.btnCerrarz)
             BtnClose.setOnClickListener{
+                //Cancelar
                 myDialog.dismiss()
             }
+
+            val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
+
+            Seguir.setOnClickListener{
+                //Continuar
+                val intent = Intent(this, administrar_unidades::class.java)
+                startActivity(intent)
+                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+
+                Toast.makeText(this,"Nueva unidad almacenada con éxito",Toast.LENGTH_SHORT).show()            }
         }
 
         binding.btnVolver.setOnClickListener{
@@ -82,5 +85,7 @@ class nueva_unidad : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out)
         }
+
+
     }
 }

@@ -132,7 +132,7 @@
         android:background="@drawable/estilo_inputs"
         android:fontFamily="@font/sublima_light"
         android:hint="6'123,000"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:maxLength="9"
         android:textAlignment="center"
         android:textColor="@android:color/white"

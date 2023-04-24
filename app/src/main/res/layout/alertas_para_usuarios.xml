@@ -24,8 +24,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:text="¡Atención!"
             android:fontFamily="@font/sublima_bold"
             android:textAlignment="center"
@@ -36,11 +34,13 @@
             android:id="@+id/textoAlerta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
 
             android:fontFamily="@font/sublima_light"
 
             android:text="foo"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
             android:textAlignment="center"
 
             android:textColor="@color/black"

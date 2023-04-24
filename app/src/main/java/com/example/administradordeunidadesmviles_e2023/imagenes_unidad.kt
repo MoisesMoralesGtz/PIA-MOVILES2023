@@ -13,6 +13,29 @@ class imagenes_unidad : AppCompatActivity() {
         binding = ActivityImagenesUnidadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        var UnidadActual=0
+
+
+
+        val imagenesDisponibles=listOf("Imagen de Interiores","Estado de las llantas","Estado de Carroceria","Estado de Tablero")
+
+        fun verificador(){
+            binding.lblImageActual.text=imagenesDisponibles[UnidadActual]
+            binding.anterior.isEnabled = UnidadActual != 0
+            binding.siguiente.isEnabled = UnidadActual != 3
+        }
+
+        binding.siguiente.setOnClickListener{
+            UnidadActual=UnidadActual+1
+            verificador()
+        }
+
+        binding.anterior.setOnClickListener {
+            UnidadActual=UnidadActual-1
+            verificador()
+        }
+
+
         binding.btnVolver.setOnClickListener{
             val intent = Intent(this, detalles_avanzados::class.java)
             startActivity(intent)
