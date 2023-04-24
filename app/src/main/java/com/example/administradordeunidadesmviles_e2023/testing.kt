@@ -5,9 +5,11 @@ import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.TextView
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityTestingBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class testing : AppCompatActivity() {
     private lateinit var binding: ActivityTestingBinding
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTestingBinding.inflate(layoutInflater)

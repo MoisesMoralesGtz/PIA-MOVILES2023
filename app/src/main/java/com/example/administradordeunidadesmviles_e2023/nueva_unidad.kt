@@ -12,10 +12,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityNuevaUnidadBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class nueva_unidad : AppCompatActivity() {
     private lateinit var binding:ActivityNuevaUnidadBinding
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNuevaUnidadBinding.inflate(layoutInflater)

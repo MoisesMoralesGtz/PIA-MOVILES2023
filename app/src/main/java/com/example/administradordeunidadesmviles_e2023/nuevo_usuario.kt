@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityNuevoUsuarioBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class nuevo_usuario : AppCompatActivity() {
     private lateinit var binding:ActivityNuevoUsuarioBinding
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNuevoUsuarioBinding.inflate(layoutInflater)

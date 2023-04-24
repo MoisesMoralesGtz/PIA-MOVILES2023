@@ -7,10 +7,12 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivitySolicitudesCuentasBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 class solicitudes_cuentas : AppCompatActivity() {
     private lateinit var binding: ActivitySolicitudesCuentasBinding
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySolicitudesCuentasBinding.inflate(layoutInflater)

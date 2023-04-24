@@ -12,9 +12,11 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivitySolicitudNuevasCuentasBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class solicitud_nuevas_cuentas : AppCompatActivity() {
     private lateinit var binding:ActivitySolicitudNuevasCuentasBinding
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySolicitudNuevasCuentasBinding.inflate(layoutInflater)

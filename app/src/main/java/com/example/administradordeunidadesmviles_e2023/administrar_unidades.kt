@@ -7,9 +7,11 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityAdministrarUnidadesBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class administrar_unidades : AppCompatActivity() {
     private lateinit var binding:ActivityAdministrarUnidadesBinding
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAdministrarUnidadesBinding.inflate(layoutInflater)
