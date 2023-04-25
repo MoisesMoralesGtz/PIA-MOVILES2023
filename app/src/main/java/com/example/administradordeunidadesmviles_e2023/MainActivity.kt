@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnIngresar.setOnClickListener{
 
-            db.collection("empleados").document("s").set(
+            db.collection("empleados").document("fost").set(
                 hashMapOf("NombreCompleto" to "TILINES A TIERRA",
                     "Password" to "YA LLEGO",
                     "Usuario" to "TILIN",
