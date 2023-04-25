@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,222 +12,190 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sublima_bold"
-        android:text="Estado de las\nUnidades"
+        android:text="Estado de las Unidades"
         android:textAlignment="center"
         android:textColor="@color/letrasColor"
 
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        android:layout_marginTop="46sp"
+        android:textSize="40sp"/>
 
-    <TextView
-        android:id="@+id/lblPlacas"
-        android:layout_width="wrap_content"
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        android:text="@string/placas"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPlacas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/lblPlacas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="@string/placas"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txtPlacas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15sp"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="FFFFF"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/lblChofer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="@string/chofer"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txtChofer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15sp"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="Lorem Ipsum"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/lblUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="@string/ubicacion"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txtUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/sublima_light"
+            android:text="Desconocido"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/lblGasolina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+
+            android:fontFamily="@font/sublima_light"
+            android:text="@string/gasolina"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/txtGasolina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="45%"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDetalles"
+            android:layout_width="wrap_content"
+
+            android:layout_height="30sp"
+            android:layout_marginTop="30sp"
+
+            android:background="@drawable/btn_continuar"
+            android:fontFamily="@font/sublima_bold"
+            android:paddingHorizontal="20sp"
+            android:text="Detalles Avanzados"
+            android:textColor="@drawable/btn_continuar_texto"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/unidadActual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/sublima_light"
+            android:text="Unidades disponibles: 1/4"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/txtPlacas"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/sublima_light"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
 
-        android:text="FFFFF"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblChofer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/anterior"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="5sp"
+            android:background="@null"
+            android:enabled="false"
+            android:fontFamily="@font/sublima_light"
+            android:text="«"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@drawable/pseudo_hiperlink"
+            android:textSize="80sp" />
 
-    <TextView
-        android:id="@+id/lblChofer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="@string/chofer"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtChofer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtChofer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="Lorem Ipsum"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblUbicacion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/lblUbicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="180dp"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="@string/ubicacion"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVolver"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.195" />
-
-    <TextView
-        android:id="@+id/txtUbicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:fontFamily="@font/sublima_light"
-        android:text="Desconocido"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblUbicacion" />
-
-    <TextView
-        android:id="@+id/lblGasolina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-
-        android:fontFamily="@font/sublima_light"
-        android:text="@string/gasolina"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUbicacion" />
-
-    <TextView
-        android:id="@+id/txtGasolina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="45%"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblGasolina" />
-
-    <TextView
-        android:id="@+id/unidadActual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:fontFamily="@font/sublima_light"
-        android:text="Unidades disponibles: 1/4"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDetalles" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnDetalles"
-        android:layout_width="wrap_content"
-
-        android:layout_height="30dp"
-        android:layout_marginTop="28dp"
-
-        android:background="@drawable/btn_continuar"
-        android:fontFamily="@font/sublima_bold"
-        android:paddingHorizontal="20sp"
-        android:text="Detalles Avanzados"
-        android:textColor="@drawable/btn_continuar_texto"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGasolina" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/anterior"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:background="@null"
-        android:enabled="false"
-        android:fontFamily="@font/sublima_light"
-        android:text="«"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@drawable/pseudo_hiperlink"
-        android:textSize="80sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/lblUbicacion"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/siguiente"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:fontFamily="@font/sublima_light"
-        android:text="»"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@drawable/pseudo_hiperlink"
-        android:textSize="80sp"
-        android:layout_marginEnd="5dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/lblUbicacion"
-        app:layout_constraintTop_toTopOf="parent" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/siguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="5sp"
+            android:background="@null"
+            android:fontFamily="@font/sublima_light"
+            android:text="»"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@drawable/pseudo_hiperlink"
+            android:textSize="80sp" />
+    </RelativeLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
 
+        android:layout_alignParentBottom="true"
+
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="30dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginHorizontal="30sp"
+        android:layout_marginBottom="46sp"
         android:background="@drawable/btn_regresar"
         android:fontFamily="@font/sublima_bold"
 
         android:text="Volver"
         android:textColor="@drawable/btn_regresar_texto"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="25sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

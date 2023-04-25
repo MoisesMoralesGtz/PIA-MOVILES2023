@@ -8,16 +8,16 @@
 
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-        android:layout_width="390dp"
-        android:layout_height="75dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="390sp"
+        android:layout_height="75sp"
+        android:layout_marginTop="32sp"
         android:fontFamily="@font/sublima_light"
         android:hint="Selecciona la Vía Administración"
         android:inputType="none"
-        android:paddingLeft="29dp"
-        android:paddingTop="10dp"
+        android:paddingLeft="29sp"
+        android:paddingTop="10sp"
 
-        android:paddingRight="29dp"
+        android:paddingRight="29sp"
         android:theme="@style/Spinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.476"
@@ -27,7 +27,7 @@
         <AutoCompleteTextView
             android:id="@+id/dropdownField"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="60sp"
             android:layout_marginTop="50px"
             android:fontFamily="@font/sublima_light"
             android:inputType="none" />

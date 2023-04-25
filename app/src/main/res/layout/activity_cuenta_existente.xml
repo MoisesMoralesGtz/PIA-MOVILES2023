@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,171 +9,149 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sublima_bold"
         android:text="Cuenta\nExistente"
         android:textAlignment="center"
         android:textColor="@color/letrasColor"
 
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        android:layout_marginTop="46sp"
 
-    <TextView
-        android:id="@+id/lblPlacas"
-        android:layout_width="wrap_content"
+        android:textSize="40sp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_centerInParent="true"
+        >
 
-        android:text="@string/nombre"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtPlacas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/lblPlacas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="@string/nombre"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"  />
+
+        <TextView
+            android:id="@+id/txtPlacas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="Lorem Ipsum"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/lblChofer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="@string/user"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"  />
+
+        <TextView
+            android:id="@+id/txtChofer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20sp"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="Lorem Ipsum"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"/>
+
+        <TextView
+            android:id="@+id/lblUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+            android:text="@string/pass"
+
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtUbicacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/sublima_light"
+            android:text="Lorem Ipsum"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"  />
+
+        <TextView
+            android:id="@+id/lblGasolina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+
+            android:fontFamily="@font/sublima_light"
+            android:text="@string/tipo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp"   />
+
+        <TextView
+            android:id="@+id/txtGasolina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="Lorem Ipsum"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnEliminarCuenta"
+            android:layout_width="wrap_content"
+
+            android:layout_height="30sp"
+            android:layout_marginTop="50sp"
+            android:layout_marginBottom="10sp"
+
+            android:background="@drawable/btn_continuar"
+            android:fontFamily="@font/sublima_bold"
+            android:paddingHorizontal="20sp"
+            android:text="Eliminar USUARIO"
+            android:textColor="@drawable/btn_continuar_texto"
+            android:textSize="15sp" />
+    </LinearLayout>
 
 
-    <TextView
-        android:id="@+id/txtPlacas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/sublima_light"
 
-        android:text="Lorem Ipsum"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblChofer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/lblChofer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="@string/user"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtChofer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtChofer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="Lorem Ipsum"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblUbicacion"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/lblUbicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
-        android:text="@string/pass"
-
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnVolver"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/txtUbicacion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:fontFamily="@font/sublima_light"
-        android:text="Lorem Ipsum"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblUbicacion" />
-
-    <TextView
-        android:id="@+id/lblGasolina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-
-        android:fontFamily="@font/sublima_light"
-        android:text="@string/tipo"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtUbicacion" />
-
-    <TextView
-        android:id="@+id/txtGasolina"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="Lorem Ipsum"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblGasolina" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnEliminarCuenta"
-        android:layout_width="wrap_content"
-
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-
-        android:background="@drawable/btn_continuar"
-        android:fontFamily="@font/sublima_bold"
-        android:paddingHorizontal="20sp"
-        android:text="Eliminar USUARIO"
-        android:textColor="@drawable/btn_continuar_texto"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtGasolina" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
 
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:layout_marginBottom="46sp"
         android:background="@drawable/btn_regresar"
         android:fontFamily="@font/sublima_bold"
 
         android:text="Volver"
         android:textColor="@drawable/btn_regresar_texto"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="25sp"  />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

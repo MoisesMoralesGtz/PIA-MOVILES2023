@@ -45,9 +45,9 @@
         android:layout_width="match_parent"
 
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="30sp"
+        android:layout_marginEnd="30sp"
+        android:layout_marginBottom="40sp"
         android:background="@drawable/btn_regresar"
         android:fontFamily="@font/sublima_bold"
 
@@ -61,14 +61,14 @@
 
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="40dp"
+        android:layout_height="60sp"
+        android:layout_marginHorizontal="40sp"
         android:background="@drawable/estilo_inputs"
         android:hint="@string/dropDownSelectUnidad"
 
         android:inputType="none"
-        android:paddingLeft="10dp"
-        android:paddingTop="2dp"
+        android:paddingLeft="10sp"
+        android:paddingTop="2sp"
         android:textColorHint="@color/white"
 
         android:theme="@style/Spinner"

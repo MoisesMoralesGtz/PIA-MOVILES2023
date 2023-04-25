@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="60sp"
         android:fontFamily="@font/sublima_bold"
         android:text="Nuevo Usuario"
         android:textAlignment="center"
@@ -27,7 +27,7 @@
         android:id="@+id/txtNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="80sp"
         android:fontFamily="@font/sublima_bold"
         android:text="Nombre Completo:"
 
@@ -42,8 +42,8 @@
     <EditText
         android:id="@+id/inputNombre"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="32dp"
+        android:layout_height="60sp"
+        android:layout_marginHorizontal="32sp"
 
         android:background="@drawable/estilo_inputs"
         android:fontFamily="@font/sublima_light"
@@ -64,7 +64,7 @@
         android:id="@+id/txtUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="150sp"
         android:fontFamily="@font/sublima_bold"
         android:text="Nombre de Usario:"
 
@@ -80,8 +80,8 @@
     <EditText
         android:id="@+id/inputUser"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="32dp"
+        android:layout_height="60sp"
+        android:layout_marginHorizontal="32sp"
 
         android:background="@drawable/estilo_inputs"
         android:fontFamily="@font/sublima_light"
@@ -103,7 +103,7 @@
         android:id="@+id/txtContra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="20sp"
         android:fontFamily="@font/sublima_bold"
 
         android:text="Contraseña:"
@@ -118,8 +118,8 @@
     <EditText
         android:id="@+id/inputContra"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="32dp"
+        android:layout_height="60sp"
+        android:layout_marginHorizontal="32sp"
 
         android:background="@drawable/estilo_inputs"
         android:fontFamily="@font/sublima_light"
@@ -138,11 +138,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnIngresar"
-        android:layout_width="160dp"
+        android:layout_width="160sp"
 
         android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginEnd="35sp"
+        android:layout_marginBottom="40sp"
         android:background="@drawable/btn_continuar"
 
         android:fontFamily="@font/sublima_bold"
@@ -154,11 +154,11 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnVolver"
-        android:layout_width="150dp"
+        android:layout_width="150sp"
 
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginStart="35sp"
+        android:layout_marginBottom="40sp"
         android:background="@drawable/btn_regresar"
         android:fontFamily="@font/sublima_bold"
 

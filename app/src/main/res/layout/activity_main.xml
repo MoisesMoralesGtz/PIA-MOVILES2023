@@ -113,7 +113,7 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="50dp"
+                android:layout_marginHorizontal="50sp"
 
                 android:background="@drawable/btn_continuar"
                 android:fontFamily="@font/sublima_bold"

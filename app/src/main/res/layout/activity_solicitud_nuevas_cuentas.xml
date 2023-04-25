@@ -1,204 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_pantallas"
     tools:context=".solicitud_nuevas_cuentas">
-    <!-- PANTALLA PENDIENTE -->
+
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sublima_bold"
         android:text="Solicitudes de\nNuevos Usuarios"
         android:textAlignment="center"
         android:textColor="@color/letrasColor"
+        android:layout_marginTop="46sp"
 
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
-
-    <TextView
-        android:id="@+id/lblNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="@string/nombre"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtNombre"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:textSize="40sp" />
 
 
-    <TextView
-        android:id="@+id/txtNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="FFFFF"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/lblUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="@string/user"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/sublima_light"
-
-        android:text="Lorem Ipsum"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/lblContra"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/lblContra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_light"
-        android:text="@string/pass"
-
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <TextView
-        android:id="@+id/txtContra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:fontFamily="@font/sublima_light"
-        android:text="Desconocido"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblContra" />
-
-    <TextView
-        android:id="@+id/lblCuenta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-
-        android:fontFamily="@font/sublima_light"
-        android:text="@string/tipo"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContra" />
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutNCUENTA"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/estilo_inputs"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        android:hint="@string/dropDownSelect"
-        android:inputType="none"
-        android:paddingLeft="10dp"
-        android:paddingTop="2dp"
+        <TextView
+            android:id="@+id/lblNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
 
-        android:textColorHint="@color/white"
-        android:theme="@style/Spinner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblCuenta">
+            android:text="@string/nombre"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
 
+        <TextView
+            android:id="@+id/txtNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15sp"
+            android:fontFamily="@font/sublima_light"
 
-        <AutoCompleteTextView
-            android:id="@+id/dropTipoCuenta"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="20px"
+            android:text="FFFFF"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/lblUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="@string/user"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15sp"
+            android:fontFamily="@font/sublima_light"
+
+            android:text="Lorem Ipsum"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/lblContra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sublima_light"
+            android:text="@string/pass"
+
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtContra"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
             android:fontFamily="@font/sublima_light"
-            android:inputType="none"
+            android:text="Desconocido"
+            android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="20dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/lblCuenta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+
+            android:fontFamily="@font/sublima_light"
+            android:text="@string/tipo"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutNCUENTA"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="60sp"
+            android:layout_marginHorizontal="40sp"
+            android:layout_marginTop="8sp"
+            android:background="@drawable/estilo_inputs"
+
+            android:hint="@string/dropDownSelect"
+            android:inputType="none"
+            android:paddingLeft="10sp"
+            android:paddingTop="2sp"
+
+            android:textColorHint="@color/white"
+            android:theme="@style/Spinner">
+
+
+            <AutoCompleteTextView
+                android:id="@+id/dropTipoCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:layout_marginBottom="20px"
+
+                android:fontFamily="@font/sublima_light"
+                android:inputType="none"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:orientation="horizontal" >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRechazar"
+                android:layout_width="wrap_content"
+                android:layout_height="40sp"
+
+                android:layout_alignParentLeft="true"
+
+                android:layout_marginLeft="40sp"
+
+
+                android:background="@drawable/btn_continuar"
+                android:fontFamily="@font/sublima_bold"
+                android:paddingHorizontal="40sp"
+                android:text="Rechazar"
+                android:textColor="@drawable/btn_continuar_texto"
+                android:textSize="15sp" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAceptar"
+                android:layout_width="wrap_content"
+
+                android:layout_height="40sp"
+
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="40sp"
+                android:background="@drawable/btn_confirmar"
+
+                android:enabled="false"
+                android:fontFamily="@font/sublima_bold"
+                android:paddingHorizontal="40sp"
+                android:text="Aceptar"
+                android:textColor="@drawable/btn_confirmar_textp"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnRechazar"
-        android:layout_width="wrap_content"
-
-        android:layout_height="40dp"
-
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/btn_continuar"
-        android:fontFamily="@font/sublima_bold"
-        android:paddingHorizontal="40sp"
-        android:text="Rechazar"
-        android:textColor="@drawable/btn_continuar_texto"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNCUENTA" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAceptar"
-        android:layout_width="wrap_content"
-        android:enabled="false"
-        android:layout_height="40dp"
-
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/btn_confirmar"
-        android:fontFamily="@font/sublima_bold"
-        android:paddingHorizontal="40sp"
-        android:text="Aceptar"
-        android:textColor="@drawable/btn_confirmar_textp"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutNCUENTA" />
-
-    <androidx.appcompat.widget.AppCompatButton
+        android:layout_alignParentBottom="true"
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
 
@@ -210,7 +193,5 @@
 
         android:text="Volver"
         android:textColor="@drawable/btn_regresar_texto"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="25sp" />
+</RelativeLayout>
