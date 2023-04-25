@@ -13,11 +13,14 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityNuevaUnidadBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class nueva_unidad : AppCompatActivity() {
     private lateinit var binding:ActivityNuevaUnidadBinding
     private lateinit var firebaseAuth: FirebaseAuth
+
+    private val db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityNuevaUnidadBinding.inflate(layoutInflater)
@@ -32,13 +35,13 @@ class nueva_unidad : AppCompatActivity() {
         //Seteo de DropDownMenus
 
         //Placas
-        var SelectPlacas=""
+        var SelectCarro=""
         binding.dropCarroceriaNuevo.setAdapter(adapter)
 
         binding.dropCarroceriaNuevo.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
-            SelectPlacas = adapterView.getItemAtPosition(i).toString()
-            Toast.makeText(this,SelectPlacas, Toast.LENGTH_SHORT).show()
+            SelectCarro = adapterView.getItemAtPosition(i).toString()
+            Toast.makeText(this,SelectCarro, Toast.LENGTH_SHORT).show()
         }
 
         binding.btnContinuar.setOnClickListener {
@@ -75,6 +78,24 @@ class nueva_unidad : AppCompatActivity() {
 
             Seguir.setOnClickListener{
                 //Continuar
+
+                db.collection("automoviles").document(binding.inputPlacas.text.toString()).set(
+                    hashMapOf(
+                        //"fechaRegistro" to getFecha(),
+                        //"horaRegistro" to getHora,
+                        "fechaRegistro" to "23/AGO/2023",
+                        "horaRegistro" to "06:00am",
+                        "stateCarroceria" to SelectCarro,
+                        "stateConductor" to "false",
+                        "stateGasolina" to "false",
+                        "stateKilometraje" to binding.inputKilometraje.text.toString(),
+                        "stateLimpieza" to "false",
+                        "stateNeumaticos" to "false",
+                        "stateUbicacion" to "false",
+
+                    )
+                )
+
                 val intent = Intent(this, administrar_unidades::class.java)
                 startActivity(intent)
                 overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)

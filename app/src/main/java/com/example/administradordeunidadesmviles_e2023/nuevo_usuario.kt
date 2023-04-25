@@ -26,6 +26,7 @@ class nuevo_usuario : AppCompatActivity() {
                     "password" to binding.inputContra.text.toString(),
                     "nombreCompleto" to binding.inputNombre.text.toString(),
                     "autorizado" to false,
+                    "estaConectado" to false,
                     "esAdministrador" to false
                 )
             )
