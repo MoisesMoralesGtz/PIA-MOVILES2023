@@ -12,16 +12,37 @@ import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityUnidadExistenteBinding
 import com.google.firebase.auth.FirebaseAuth
 
+import com.google.firebase.firestore.FirebaseFirestore
 
 class unidad_existente : AppCompatActivity() {
     private lateinit var binding:ActivityUnidadExistenteBinding
+
     private lateinit var firebaseAuth: FirebaseAuth
+
+    private val db = FirebaseFirestore.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityUnidadExistenteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Adpatador DropDown
+        //Se leen los datos
+        val bundle = intent.extras
+        val placasEspecificadas = bundle?.getString("placas")
+
+        binding.lblPlacas.text = placasEspecificadas
+        val usuariosRef = db.collection("automoviles").document(placasEspecificadas.toString())
+
+        usuariosRef.get()
+            .addOnSuccessListener { document ->
+                var datoLeido = document.data
+                binding.lblCarro.text = datoLeido?.get("stateCarroceria") as CharSequence?
+                binding.lblKilometraje.text = datoLeido?.get("stateKilometraje") as CharSequence?
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this,"Placas no encontradas", Toast.LENGTH_SHORT).show()
+            }
+
 
 
         binding.btnEliminarUnidad.setOnClickListener{
@@ -58,12 +79,16 @@ class unidad_existente : AppCompatActivity() {
             val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
 
             Seguir.setOnClickListener{
-                //Continuar
+                db.collection("automoviles").document(placasEspecificadas.toString())
+                    .delete()
+                    .addOnSuccessListener { Toast.makeText(this,"Unidad Correctamente eliminada", Toast.LENGTH_SHORT).show() }
+                    .addOnFailureListener { Toast.makeText(this,"Hubo un problema con el proceso", Toast.LENGTH_SHORT).show() }
+
                 val intent = Intent(this, administrar_unidades::class.java)
                 startActivity(intent)
                 overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
 
-                Toast.makeText(this,"Unidad Eliminada con éxito",Toast.LENGTH_SHORT).show()
+
             }
 
 

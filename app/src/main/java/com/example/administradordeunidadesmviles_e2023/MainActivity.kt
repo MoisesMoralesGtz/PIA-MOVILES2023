@@ -25,16 +25,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnIngresar.setOnClickListener{
 
-            db.collection("empleados").document("fost").set(
-                hashMapOf("NombreCompleto" to "TILINES A TIERRA",
-                    "Password" to "YA LLEGO",
-                    "Usuario" to "TILIN",
-                    "esAdministrador" to false,
-                    "idEmpleado" to 1
-                    )
-            )
-
-
             Toast.makeText(this,"FUNCIONO",Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, main_administrador::class.java)

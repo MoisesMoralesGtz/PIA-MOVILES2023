@@ -46,6 +46,7 @@ class administrar_unidades : AppCompatActivity() {
             Toast.makeText(this,selectPlacas, Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, unidad_existente::class.java)
+            intent.putExtra("placas",selectPlacas)
             startActivity(intent)
             overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
         }

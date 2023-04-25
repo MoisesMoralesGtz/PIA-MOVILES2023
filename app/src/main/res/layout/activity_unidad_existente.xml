@@ -28,7 +28,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/lblPlacas"
+            android:id="@+id/txtPlacas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -39,7 +39,7 @@
             android:textSize="35sp" />
 
         <TextView
-            android:id="@+id/txtChofer"
+            android:id="@+id/lblPlacas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -61,7 +61,7 @@
             android:textSize="35sp" />
 
         <TextView
-            android:id="@+id/txtPlacas"
+            android:id="@+id/lblCarro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -83,7 +83,7 @@
             android:textSize="35sp" />
 
         <TextView
-            android:id="@+id/txtUbicacion"
+            android:id="@+id/lblKilometraje"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 

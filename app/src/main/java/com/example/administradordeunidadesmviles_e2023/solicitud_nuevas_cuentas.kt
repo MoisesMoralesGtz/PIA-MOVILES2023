@@ -22,6 +22,21 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
         binding = ActivitySolicitudNuevasCuentasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+        //Se leen los cambios del tipo de cuenta
+        binding.lblPlacas.text = placasEspecificadas
+        val usuariosRef = db.collection("automoviles").document(placasEspecificadas.toString())
+
+        usuariosRef.get()
+            .addOnSuccessListener { document ->
+                var datoLeido = document.data
+                binding.lblCarro.text = datoLeido?.get("stateCarroceria") as CharSequence?
+                binding.lblKilometraje.text = datoLeido?.get("stateKilometraje") as CharSequence?
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(this,"Placas no encontradas", Toast.LENGTH_SHORT).show()
+            }
+
         //Arreglos
         val arrayOpciones=listOf("Administrador","Empleado")
 
