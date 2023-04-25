@@ -3,9 +3,12 @@ package com.example.administradordeunidadesmviles_e2023
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityNuevoUsuarioBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class nuevo_usuario : AppCompatActivity() {
     private lateinit var binding:ActivityNuevoUsuarioBinding
@@ -19,7 +22,6 @@ class nuevo_usuario : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnIngresar.setOnClickListener {
-
 
             db.collection("empleados").document(binding.inputUser.text.toString()).set(
                 hashMapOf(

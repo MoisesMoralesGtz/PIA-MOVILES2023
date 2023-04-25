@@ -9,16 +9,31 @@ import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityAdministrarUnidadesBinding
 import com.google.firebase.auth.FirebaseAuth
 
+import com.google.firebase.firestore.FirebaseFirestore
+
 class administrar_unidades : AppCompatActivity() {
     private lateinit var binding:ActivityAdministrarUnidadesBinding
     private lateinit var firebaseAuth: FirebaseAuth
+
+    private val db = FirebaseFirestore.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAdministrarUnidadesBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        //Se genera el arreglo de placas
+        val arrayOpciones = ArrayList<String>()
 
+        val placasRf = db.collection("automoviles")
+        placasRf.get()
+            .addOnSuccessListener { querySnapshot ->
+                for (document in querySnapshot) {
+                    arrayOpciones.add(document.id.toString())
+                }
+            }
+            .addOnFailureListener { exception ->
+            }
 
-        val arrayOpciones=listOf("33 - ASDF - 22","33 - ASDF - 22","33 - ASDF - 22","33 - ASDF - 22")
         val adapter = ArrayAdapter(this, R.layout.elemento_lista,arrayOpciones)
 
         binding.dropPlacas.setAdapter(adapter)

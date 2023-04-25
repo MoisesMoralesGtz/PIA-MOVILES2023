@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityTestingBinding
 //import com.google.firebase.auth.FirebaseAuth
+
+import java.text.SimpleDateFormat
+import java.util.*
 
 class testing : AppCompatActivity() {
     private lateinit var binding: ActivityTestingBinding
@@ -16,15 +20,12 @@ class testing : AppCompatActivity() {
         setContentView(binding.root)
 
 
-        val arrayOpciones=listOf("A","B","C","D","E","F")
 
-        val adapter = ArrayAdapter(this, R.layout.elemento_lista,arrayOpciones)
-        binding.dropdownField.setAdapter(adapter)
 
-        binding.dropdownField.setOnItemClickListener{adapter, view,i,l->
-            val vias = view as TextView
+
+            val dateFormat = SimpleDateFormat("d MM yyyy, HH:mm")
+            val date = dateFormat.format(Date())
+
+            Toast.makeText(this,date,Toast.LENGTH_SHORT).show()
         }
-
-
-    }
 }
