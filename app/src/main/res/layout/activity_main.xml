@@ -1,137 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo_pantallas"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/sublima_bold"
-        android:text="Administrador\nde Unidades\nMóviles"
-        android:textAlignment="center"
+    android:orientation="vertical">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36sp"
+            android:fontFamily="@font/sublima_bold"
+            android:text="Administradors\nde Unidades\nMóviles"
+            android:textAlignment="center"
 
-        android:textColor="@color/letrasColor"
-        android:textSize="40sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:textColor="@color/letrasColor"
+            android:textSize="40sp" />
 
-    <TextView
-        android:id="@+id/encabezadoUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sublima_bold"
-        android:text="Usuario:"
-        android:textAlignment="center"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            >
 
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnIngresar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.271" />
+            <TextView
+                android:id="@+id/encabezadoUser"
 
-    <EditText
-        android:id="@+id/TxtUser"
-        android:layout_width="match_parent"
+                android:layout_marginTop="50sp"
 
-        android:layout_height="60dp"
-        android:layout_marginStart="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sublima_bold"
+                android:text="Usuario:"
+                android:textAlignment="center"
 
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/estilo_inputs"
-        android:fontFamily="@font/sublima_light"
-        android:hint="ej. Jose2023"
-        android:inputType="textPersonName"
-        android:maxLength="15"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textColorHint="@color/placeHolderColor"
-        android:textCursorDrawable="@drawable/cursor_color"
 
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/encabezadoUser" />
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-    <TextView
-        android:id="@+id/encabezadoPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/sublima_bold"
-        android:text="Contraseña:"
+            <EditText
+                android:id="@+id/TxtUser"
+                android:layout_width="match_parent"
 
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/TxtUser" />
+                android:layout_height="60sp"
+                android:layout_marginStart="50sp"
 
-    <EditText
-        android:id="@+id/txtContra"
-        android:layout_width="match_parent"
+                android:layout_marginEnd="50sp"
+                android:background="@drawable/estilo_inputs"
+                android:fontFamily="@font/sublima_light"
+                android:hint="ej. Jose2023"
+                android:inputType="textPersonName"
+                android:maxLength="15"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/placeHolderColor"
+                android:textCursorDrawable="@drawable/cursor_color"
 
-        android:layout_height="60dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
+                android:textSize="35sp" />
 
-        android:background="@drawable/estilo_inputs"
-        android:fontFamily="@font/sublima_light"
-        android:hint="******"
+            <TextView
+                android:id="@+id/encabezadoPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:fontFamily="@font/sublima_bold"
+                android:text="Contraseña:"
 
-        android:inputType="textPassword"
-        android:maxLength="15"
-        android:textAlignment="center"
-        android:textColor="@android:color/white"
-        android:textColorHint="@color/placeHolderColor"
-        android:textCursorDrawable="@drawable/cursor_color"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
-        android:textSize="35sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/encabezadoPassword" />
+            <EditText
+                android:id="@+id/txtContra"
+                android:layout_width="match_parent"
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnIngresar"
+                android:layout_height="60sp"
+                android:layout_marginHorizontal="50sp"
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
+                android:background="@drawable/estilo_inputs"
+                android:fontFamily="@font/sublima_light"
+                android:hint="******"
 
-        android:layout_marginBottom="80dp"
-        android:background="@drawable/btn_continuar"
-        android:fontFamily="@font/sublima_bold"
-        android:text="Ingresar"
-        android:textColor="@drawable/btn_continuar_texto"
-        android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="50dp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/txtNuevaCuenta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@null"
-        android:fontFamily="@font/sublima_light"
-        android:text="@string/pseudohiperlink"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="@drawable/pseudo_hiperlink"
-        android:textColorHint="@color/placeHolderColor"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIngresar" />
+                android:inputType="textPassword"
+                android:maxLength="15"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/placeHolderColor"
+                android:textCursorDrawable="@drawable/cursor_color"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                android:textSize="35sp" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            android:layout_alignParentBottom="true"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+
+                android:id="@+id/btnIngresar"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+
+                android:background="@drawable/btn_continuar"
+                android:fontFamily="@font/sublima_bold"
+                android:text="Ingresar"
+                android:textColor="@drawable/btn_continuar_texto"
+                android:textSize="25sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/txtNuevaCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:fontFamily="@font/sublima_light"
+                android:text="@string/pseudohiperlink"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@drawable/pseudo_hiperlink"
+                android:textColorHint="@color/placeHolderColor"
+                android:textSize="20sp"
+                android:layout_marginBottom="36sp"
+
+                android:layout_below="@id/btnIngresar"
+                />
+
+
+
+
+        </LinearLayout>
+</RelativeLayout>
+
+

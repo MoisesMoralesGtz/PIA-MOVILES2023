@@ -10,7 +10,7 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sublima_bold"
         android:text="Administrar\nUnidades"
@@ -44,7 +44,7 @@
 
     <TextView
         android:id="@+id/txtNuevaCuenta"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
         android:layout_marginTop="96dp"
@@ -59,7 +59,7 @@
 
     <TextView
         android:id="@+id/txtUser"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
 
@@ -75,7 +75,7 @@
 
     <TextView
         android:id="@+id/labeleCuentas"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/sublima_light"
         android:text="Selecciona para desplegar información"
@@ -140,7 +140,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="50dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/btnCerrarSesion"

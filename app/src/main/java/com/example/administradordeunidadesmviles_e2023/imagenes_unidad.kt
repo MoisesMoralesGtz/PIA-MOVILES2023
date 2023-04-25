@@ -26,12 +26,12 @@ class imagenes_unidad : AppCompatActivity() {
         }
 
         binding.siguiente.setOnClickListener{
-            UnidadActual=UnidadActual+1
+            UnidadActual++
             verificador()
         }
 
         binding.anterior.setOnClickListener {
-            UnidadActual=UnidadActual-1
+            UnidadActual--
             verificador()
         }
 
