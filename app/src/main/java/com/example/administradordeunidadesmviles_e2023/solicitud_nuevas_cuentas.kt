@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -13,10 +14,12 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivitySolicitudNuevasCuentasBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class solicitud_nuevas_cuentas : AppCompatActivity() {
     private lateinit var binding:ActivitySolicitudNuevasCuentasBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySolicitudNuevasCuentasBinding.inflate(layoutInflater)
@@ -24,14 +27,17 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
 
 
         //Se leen los cambios del tipo de cuenta
-        binding.lblPlacas.text = placasEspecificadas
-        val usuariosRef = db.collection("automoviles").document(placasEspecificadas.toString())
+        val bundle = intent.extras
+        val empleadoEspecificado = bundle?.getString("user")
+        val usuariosRef = db.collection("empleados").document(empleadoEspecificado.toString())
 
         usuariosRef.get()
             .addOnSuccessListener { document ->
                 var datoLeido = document.data
-                binding.lblCarro.text = datoLeido?.get("stateCarroceria") as CharSequence?
-                binding.lblKilometraje.text = datoLeido?.get("stateKilometraje") as CharSequence?
+                binding.txtNombre.text = datoLeido?.get("nombreCompleto") as CharSequence?
+                binding.txtUser.text = empleadoEspecificado
+                binding.txtContra.text = datoLeido?.get("password") as CharSequence?
+                binding.textInputLayoutNCUENTA.hint = if(datoLeido?.get("esAdministrador") as Boolean) "Cargo Actual: Administrador" else "Cargo Actual: Empleado"
             }
             .addOnFailureListener { exception ->
                 Toast.makeText(this,"Placas no encontradas", Toast.LENGTH_SHORT).show()
@@ -46,14 +52,19 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
         //Seteo de DropDownMenus
 
         //Placas
-        var permisosSeleccionados=""
         binding.dropTipoCuenta.setAdapter(adapter)
 
         binding.dropTipoCuenta.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
 
-            permisosSeleccionados = adapterView.getItemAtPosition(i).toString()
+            var permisosSeleccionados = adapterView.getItemAtPosition(i).toString()
             Toast.makeText(this,permisosSeleccionados, Toast.LENGTH_SHORT).show()
+            if(permisosSeleccionados=="Administrador"){
+                binding.admState.visibility= View.VISIBLE
+            }else{
+                binding.admState.visibility= View.INVISIBLE
+            }
+
 
             //Linea para hacer que aparezcan todos los demas drops
             //Se cambia a una linea de activacion de botones
@@ -73,7 +84,7 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
             val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
 
             titulo.text="Atención"
-            texto.text="Si declinas una solicitud, el interesado tendrá que volver a realizar la solicitud de cuenta, esta seguro de rechazar la solicitud de:\nEjemplo"
+            texto.text="Si declinas una solicitud, el interesado tendrá que volver a realizar la solicitud de cuenta, esta seguro de rechazar la solicitud de:\n${binding.txtNombre.text}"
 
             //Dimensiones del Dialog
             val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
@@ -116,7 +127,8 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
             val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
 
             titulo.text="Atención"
-            texto.text="Está apunto de aceptar la solicitud, esta accion no se puede modificar, por favor, verifque que el nombre y permisos sean los correctos:\nUsuario: Manuel\nPermisos: Empleado"
+            var permisos =  if(binding.admState.visibility==View.VISIBLE) "Administrador" else "Empleado"
+            texto.text="Está apunto de aceptar la solicitud, esta accion no se puede modificar, por favor, verifque que el nombre y permisos sean los correctos:\nUsuario: ${binding.txtNombre.text}\nPermisos: ${permisos}"
 
             //Dimensiones del Dialog
             val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
@@ -138,10 +150,25 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
 
             Seguir.setOnClickListener{
                 //Continuar
+                //ActualizarPermisos y
+                var permisos=false
+                if(binding.admState.visibility==View.VISIBLE){
+                    permisos = true
+                }
+
+                db.collection("empleados").document(binding.txtUser.text.toString()).set(
+                    hashMapOf(
+                        "password" to binding.txtContra.text.toString(),
+                        "nombreCompleto" to binding.txtNombre.text.toString(),
+                        "autorizado" to true,
+                        "estaConectado" to true,
+                        "esAdministrador" to permisos
+                    )
+                )
+
                 val intent = Intent(this, solicitudes_cuentas::class.java)
                 startActivity(intent)
                 overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
-
                 Toast.makeText(this,"Solicitud aceptada con éxito",Toast.LENGTH_SHORT).show()
             }
 
@@ -153,4 +180,5 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
             overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out)
         }
     }
+
 }

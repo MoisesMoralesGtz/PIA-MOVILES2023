@@ -159,6 +159,14 @@
                 android:text="Rechazar"
                 android:textColor="@drawable/btn_continuar_texto"
                 android:textSize="15sp" />
+            <LinearLayout
+                android:id="@+id/admState"
+                android:layout_width="0sp"
+                android:layout_height="0sp"
+                android:visibility="invisible"
+                >
+
+            </LinearLayout>
 
 
             <androidx.appcompat.widget.AppCompatButton

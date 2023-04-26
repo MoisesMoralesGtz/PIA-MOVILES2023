@@ -23,6 +23,7 @@ class solicitudes_cuentas : AppCompatActivity() {
 
 
         val arrayPendientes = ArrayList<String>()
+        val userPendientes=ArrayList<String>()
         val arrayAutorizados = ArrayList<String>()
 
         val placasRf = db.collection("empleados")
@@ -32,6 +33,7 @@ class solicitudes_cuentas : AppCompatActivity() {
                     val empleadosData = document.data
                     if(!(empleadosData["autorizado"] as Boolean)){
                         arrayPendientes.add(empleadosData["nombreCompleto"] as String)
+                        userPendientes.add(document.id)
                     }else{
                         arrayAutorizados.add(empleadosData["nombreCompleto"] as String)
                     }
@@ -64,7 +66,7 @@ class solicitudes_cuentas : AppCompatActivity() {
 
         binding.dropNueva.onItemClickListener = AdapterView.OnItemClickListener {
                 adapterView, view, i, l ->
-            selecNuevo = adapterView.getItemAtPosition(i).toString()
+            selecNuevo = userPendientes[i].toString()
             Toast.makeText(this,selecNuevo, Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, solicitud_nuevas_cuentas::class.java)
