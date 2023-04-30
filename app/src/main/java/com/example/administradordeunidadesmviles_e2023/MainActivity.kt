@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnIngresar.setOnClickListener{
 
-            Toast.makeText(this,"FUNCIONO",Toast.LENGTH_SHORT).show()
 
             val intent = Intent(this, main_administrador::class.java)
             startActivity(intent)
