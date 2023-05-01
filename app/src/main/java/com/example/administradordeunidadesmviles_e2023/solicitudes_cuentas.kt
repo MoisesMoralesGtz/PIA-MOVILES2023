@@ -26,27 +26,28 @@ class solicitudes_cuentas : AppCompatActivity() {
         val userPendientes=ArrayList<String>()
         val arrayAutorizados = ArrayList<String>()
 
+        var nUsuarios=0
+
         val placasRf = db.collection("empleados")
         placasRf.get()
             .addOnSuccessListener { querySnapshot ->
                 for (document in querySnapshot) {
                     val empleadosData = document.data
-                    if(!(empleadosData["autorizado"] as Boolean)){
+                    if (!(empleadosData["autorizado"] as Boolean)) {
                         arrayPendientes.add(empleadosData["nombreCompleto"] as String)
                         userPendientes.add(document.id)
-                    }else{
+                        nUsuarios++;
+                    } else {
                         arrayAutorizados.add(empleadosData["nombreCompleto"] as String)
                     }
-
                 }
-            }
 
+                binding.labelnCuentas.setText("¡Hay "+nUsuarios+" Solicitudes Pendientes!")
+            }
         val adapterP = ArrayAdapter(this, R.layout.elemento_lista,arrayPendientes)
         val adapterA = ArrayAdapter(this, R.layout.elemento_lista,arrayAutorizados)
 
-
         //Adapter
-
 
         binding.dropNueva.setAdapter(adapterP)
         binding.dropExistente.setAdapter(adapterA)

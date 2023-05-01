@@ -26,8 +26,8 @@
 
     <TextView
         android:id="@+id/txtNombre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="236dp"
+        android:layout_height="54dp"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/sublima_light"
         android:text="@string/nCuentas"

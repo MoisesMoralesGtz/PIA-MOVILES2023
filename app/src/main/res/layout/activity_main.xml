@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="36sp"
             android:fontFamily="@font/sublima_bold"
-            android:text="Administradors\nde Unidades\nMóviles"
+            android:text="Administrador\nde Unidades\nMóviles"
             android:textAlignment="center"
 
             android:textColor="@color/letrasColor"
