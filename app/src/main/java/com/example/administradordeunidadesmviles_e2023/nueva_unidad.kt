@@ -100,7 +100,6 @@ class nueva_unidad : AppCompatActivity() {
         Seguir.setOnClickListener {
             //Continuar
 
-
             db.collection("automoviles").document(binding.inputPlacas.text.toString()).set(
                 hashMapOf(
                     "fechaRegistro" to getFecha(),
