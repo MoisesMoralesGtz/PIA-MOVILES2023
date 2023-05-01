@@ -48,62 +48,13 @@ class nueva_unidad : AppCompatActivity() {
             }
 
         binding.btnContinuar.setOnClickListener {
-            val dialogBinding = layoutInflater.inflate(R.layout.alertas_para_usuarios, null)
-            val myDialog = Dialog(this)
-
-            myDialog.setContentView(dialogBinding)
-            myDialog.setCancelable(false)
-
-            //Texto del Dialog
-            val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
-            val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
-
-            titulo.text = "Atención"
-            texto.text ="Está a punto de declarar una nueva unidad, por favor, asegurese que los datos ingresados son correctos:\n Placas: ${binding.inputPlacas.text}\nCarroceria: ${SelectCarro}\nKilometraje: ${binding.inputKilometraje.text} Km"
-
-            //Dimensiones del Dialog
-            val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
-            val height = (resources.displayMetrics.heightPixels * 0.50).toInt()
-
-            myDialog.window?.setLayout(width, height)
-            myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-
-            myDialog.show()
-
-            //Botones del Dialog
-            val BtnClose = dialogBinding.findViewById<Button>(R.id.btnCerrarz)
-            BtnClose.setOnClickListener {
-                //Cancelar
-                myDialog.dismiss()
-            }
-
-            val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
-
-            Seguir.setOnClickListener {
-                //Continuar
+                if(SelectCarro=="" || binding.inputPlacas.text.toString()=="" || binding.inputKilometraje.text.toString()==""){
+                    Toast.makeText(this, "Es necesario tener todos los campos completos", Toast.LENGTH_SHORT).show();
+                }else{
+                    desplegarDialog(SelectCarro);
+                }
 
 
-                db.collection("automoviles").document(binding.inputPlacas.text.toString()).set(
-                    hashMapOf(
-                        "fechaRegistro" to getFecha(),
-                        "horaRegistro" to getHora(),
-                        "stateCarroceria" to SelectCarro,
-                        "stateConductor" to "Sin Conductor",
-                        "stateGasolina" to "-",
-                        "stateKilometraje" to binding.inputKilometraje.text.toString(),
-                        "stateLimpieza" to "-",
-                        "stateNeumaticos" to "-",
-                        "stateUbicacion" to "En Base",
-
-                        )
-                )
-
-                val intent = Intent(this, administrar_unidades::class.java)
-                startActivity(intent)
-                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
-
-                Toast.makeText(this, "Nueva unidad almacenada con éxito", Toast.LENGTH_SHORT).show()
-            }
         }
 
         binding.btnVolver.setOnClickListener {
@@ -112,6 +63,65 @@ class nueva_unidad : AppCompatActivity() {
             overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out)
         }
 
+    }
+
+    private fun desplegarDialog(selectCarros:String) {
+        val dialogBinding = layoutInflater.inflate(R.layout.alertas_para_usuarios, null)
+        val myDialog = Dialog(this)
+
+        myDialog.setContentView(dialogBinding)
+        myDialog.setCancelable(false)
+
+        //Texto del Dialog
+        val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
+        val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
+
+        titulo.text = "Atención"
+        texto.text ="Está a punto de declarar una nueva unidad, por favor, asegurese que los datos ingresados son correctos:\n Placas: ${binding.inputPlacas.text}\nCarroceria: ${selectCarros}\nKilometraje: ${binding.inputKilometraje.text} Km"
+
+        //Dimensiones del Dialog
+        val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
+        val height = (resources.displayMetrics.heightPixels * 0.50).toInt()
+
+        myDialog.window?.setLayout(width, height)
+        myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        myDialog.show()
+
+        //Botones del Dialog
+        val BtnClose = dialogBinding.findViewById<Button>(R.id.btnCerrarz)
+        BtnClose.setOnClickListener {
+            //Cancelar
+            myDialog.dismiss()
+        }
+
+        val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
+
+        Seguir.setOnClickListener {
+            //Continuar
+
+
+            db.collection("automoviles").document(binding.inputPlacas.text.toString()).set(
+                hashMapOf(
+                    "fechaRegistro" to getFecha(),
+                    "horaRegistro" to getHora(),
+                    "stateCarroceria" to selectCarros,
+                    "stateConductor" to "Sin Conductor",
+                    "stateGasolina" to "-",
+                    "stateKilometraje" to binding.inputKilometraje.text.toString(),
+                    "stateLimpieza" to "-",
+                    "stateNeumaticos" to "-",
+                    "stateUbicacion" to "En Base",
+
+                    )
+            )
+
+            val intent = Intent(this, administrar_unidades::class.java)
+            startActivity(intent)
+            overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+
+            Toast.makeText(this, "Nueva unidad almacenada con éxito", Toast.LENGTH_SHORT).show()
+        }
     }
 
     private fun getHora(): String {
