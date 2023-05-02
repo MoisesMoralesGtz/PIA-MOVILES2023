@@ -21,12 +21,13 @@ class MainActivity : AppCompatActivity() {
     private val db = FirebaseFirestore.getInstance()
 
     private fun verificacionUser(toString: String):Any {
+        var flagUser=0;
         val empleadosRf = db.collection("empleados")
         empleadosRf.get()
             .addOnSuccessListener { querySnapshot ->
                 for (document in querySnapshot) {
                     if(document.id==binding.TxtUser.text.toString()){
-
+                        flagUser=1
                         var password = document.data["password"] as String
                         var autorizado =document.data["autorizado"] as Boolean
                         var permisos = document.data["esAdministrador"] as Boolean
@@ -59,8 +60,9 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
 
-                //ocupaflag
-                //Toast.makeText(this,"El usuario introducido no existe, consulte con su superior",Toast.LENGTH_SHORT).show()
+                if (flagUser==0){
+                    Toast.makeText(this,"El usuario introducido no existe, consulte con su superior",Toast.LENGTH_SHORT).show()
+                }
             }
         return 0
     }
