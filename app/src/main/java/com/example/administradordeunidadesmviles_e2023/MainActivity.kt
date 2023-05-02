@@ -20,47 +20,46 @@ class MainActivity : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()
 
-    private fun verificacionUser(toString: String):Any {
-        var flagUser=0;
-        val empleadosRf = db.collection("empleados")
-        empleadosRf.get()
-            .addOnSuccessListener { querySnapshot ->
-                for (document in querySnapshot) {
-                    if(document.id==binding.TxtUser.text.toString()){
-                        flagUser=1
-                        var password = document.data["password"] as String
-                        var autorizado =document.data["autorizado"] as Boolean
-                        var permisos = document.data["esAdministrador"] as Boolean
+    private fun verificarU():Any{
 
-                        Log.d("ADVERTENCIAS", password)
+        val usuariosRef = db.collection("empleados").document(binding.TxtUser.text.toString())
+        Log.d("ERRORES",binding.TxtUser.text.toString())
 
-                        if(password==binding.txtContra.text.toString()){
-                            //Contraseña y usuario coinciden
+        usuariosRef.get()
+            .addOnSuccessListener { document ->
 
-                            if(autorizado){
-                                if(permisos){
-                                    val intent = Intent(this, main_administrador::class.java)
-                                    startActivity(intent)
-                                    overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
-                                }else{
-                                    val intent = Intent(this, main_empleado::class.java)
-                                    startActivity(intent)
-                                    overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
-                                }
+                if (document.exists()) {
+                    var datoLeido = document.data
 
+                    var password = datoLeido?.get("password") as String
+                    var autorizado = datoLeido?.get("autorizado") as Boolean
+                    var permisos = datoLeido?.get("esAdministrador") as Boolean
+
+                    if(password==binding.txtContra.text.toString()){
+                        //Contraseña y usuario coinciden
+
+                        if(autorizado){
+                            if(permisos){
+                                val intent = Intent(this, main_administrador::class.java)
+                                startActivity(intent)
+                                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
                             }else{
-                                //La cuenta aun no ha sido autorizada
-                                Toast.makeText(this,"La cuenta aún no ha sido autorizada, consulte a su superior.",Toast.LENGTH_SHORT).show()
+                                val intent = Intent(this, main_empleado::class.java)
+                                startActivity(intent)
+                                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
                             }
 
                         }else{
-                            //Contraseña Incorrecta
-                            Toast.makeText(this,"La contraseña introducida es incorrecta, verifique nuevamente",Toast.LENGTH_SHORT).show()
+                            //La cuenta aun no ha sido autorizada
+                            Toast.makeText(this,"La cuenta aún no ha sido autorizada, consulte a su superior.",Toast.LENGTH_SHORT).show()
                         }
-                    }
-                }
 
-                if (flagUser==0){
+                    }else{
+                        //Contraseña Incorrecta
+                        Toast.makeText(this,"La contraseña introducida es incorrecta, verifique nuevamente",Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    // El documento no existe
                     Toast.makeText(this,"El usuario introducido no existe, consulte con su superior",Toast.LENGTH_SHORT).show()
                 }
             }
@@ -77,7 +76,7 @@ class MainActivity : AppCompatActivity() {
             if(binding.TxtUser.text.toString() == "" || binding.txtContra.text.toString()==""){
                 Toast.makeText(this,"No puede dejar campos vacios, ingrese todos sus datos",Toast.LENGTH_SHORT).show();
             }else{
-                verificacionUser(binding.TxtUser.text.toString())
+                verificarU()
             }
 
 
