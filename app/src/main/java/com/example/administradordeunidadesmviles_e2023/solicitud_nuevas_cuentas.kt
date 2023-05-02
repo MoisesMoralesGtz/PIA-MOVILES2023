@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -105,11 +106,20 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
             val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
 
             Seguir.setOnClickListener{
+
+                db.collection("empleados").document(binding.txtUser.text as String)
+                .delete()
+                    .addOnSuccessListener{
+                        Toast.makeText(this,"Solicitud rechazada con éxito",Toast.LENGTH_SHORT).show()
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(this,"Solicitud rechazada sin éxito",Toast.LENGTH_SHORT).show()
+                    }
+
                 val intent = Intent(this, solicitudes_cuentas::class.java)
                 startActivity(intent)
                 overridePendingTransition(R.anim.from_left_in, R.anim.from_right_out)
 
-                Toast.makeText(this,"Solicitud rechazada con éxito",Toast.LENGTH_SHORT).show()
             }
 
 
