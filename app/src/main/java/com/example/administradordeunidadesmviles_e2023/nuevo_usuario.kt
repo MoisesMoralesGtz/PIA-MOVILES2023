@@ -28,48 +28,51 @@ class nuevo_usuario : AppCompatActivity() {
 
         binding.btnIngresar.setOnClickListener {
 
-            db.collection("empleados").document(binding.inputUser.text.toString()).set(
-                hashMapOf(
-                    "password" to binding.inputContra.text.toString(),
-                    "nombreCompleto" to binding.inputNombre.text.toString(),
-                    "autorizado" to false,
-                    "estaConectado" to false,
-                    "esAdministrador" to false
-                )
-            )
-            //Aqui es donde va el dialogo
+            if(binding.inputNombre.text.toString()=="" || binding.inputUser.text.toString()=="" || binding.inputContra.text.toString()=="" || binding.inputVerificar.toString()=="" ){
 
-            //ALERTAS PARA USUARIO PT 2
-            val dialogBinding=layoutInflater.inflate(R.layout.solo_continuar,null)
-            val myDialog = Dialog(this)
+                Toast.makeText(this,"Todos los campos deben de estar completos", Toast.LENGTH_SHORT).show()
+            }else {
+                if(binding.inputContra.text.toString() != binding.inputVerificar.toString()){
+                    Toast.makeText(this,"Ambas contraseñas deberán de coincidir.", Toast.LENGTH_SHORT).show()
+                }else{
+                    insertDatos()
 
-            myDialog.setContentView(dialogBinding)
-            myDialog.setCancelable(false)
+                    //Aqui es donde va el dialogo
 
-            //Texto del Dialog
-            val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
-            val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
+                    //ALERTAS PARA USUARIO PT 2
+                    val dialogBinding = layoutInflater.inflate(R.layout.solo_continuar, null)
+                    val myDialog = Dialog(this)
 
-            titulo.text="Listo"
-            texto.text="Has completado el proceso para crear tu cuenta, comentale a tu superior, y espera a que autorizen tu cuenta."
+                    myDialog.setContentView(dialogBinding)
+                    myDialog.setCancelable(false)
 
-            //Dimensiones del Dialog
-            val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
-            val height = (resources.displayMetrics.heightPixels * 0.40).toInt()
+                    //Texto del Dialog
+                    val titulo = dialogBinding.findViewById<TextView>(R.id.tituloAlerta)
+                    val texto = dialogBinding.findViewById<TextView>(R.id.textoAlerta)
 
-            myDialog.window?.setLayout(width, height)
-            myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+                    titulo.text = "Listo"
+                    texto.text = "Has completado el proceso para crear tu cuenta, comentale a tu superior, y espera a que autorizen tu cuenta."
 
-            myDialog.show()
+                    //Dimensiones del Dialog
+                    val width = (resources.displayMetrics.widthPixels * 0.90).toInt()
+                    val height = (resources.displayMetrics.heightPixels * 0.40).toInt()
 
-            val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
+                    myDialog.window?.setLayout(width, height)
+                    myDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-            Seguir.setOnClickListener{
-                val intent = Intent(this,MainActivity::class.java)
-                startActivity(intent)
-                overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+                    myDialog.show()
 
-                Toast.makeText(this,"Solicitud realizada con éxito",Toast.LENGTH_SHORT).show()
+                    val Seguir = dialogBinding.findViewById<Button>(R.id.btnSeguirz)
+
+                    Seguir.setOnClickListener {
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
+
+                        Toast.makeText(this, "Solicitud realizada con éxito", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
             }
         }
 
@@ -78,5 +81,18 @@ class nuevo_usuario : AppCompatActivity() {
             startActivity(intent)
             overridePendingTransition(R.anim.from_up_in, R.anim.from_down_out)
         }
+    }
+
+    private fun insertDatos() {
+        db.collection("empleados").document(binding.inputUser.text.toString()).set(
+            hashMapOf(
+                "password" to binding.inputContra.text.toString(),
+                "nombreCompleto" to binding.inputNombre.text.toString(),
+                "autorizado" to false,
+                "estaConectado" to false,
+                "esAdministrador" to false
+            )
+        )
+
     }
 }
