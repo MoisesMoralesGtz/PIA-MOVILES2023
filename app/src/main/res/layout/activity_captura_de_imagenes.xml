@@ -59,27 +59,12 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnVolver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="fill_horizontal"
-            android:background="@drawable/btn_regresar"
-            android:fontFamily="@font/sublima_bold"
-            android:paddingHorizontal="20dp"
-
-            android:text="Volver"
-            android:textColor="@drawable/btn_regresar_texto"
-            android:textSize="25sp" />
-        <LinearLayout
-            android:layout_width="25sp"
-            android:layout_height="0sp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnContinuar"
 
-            android:layout_width="wrap_content"
-
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="50sp"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_continuar"
             android:fontFamily="@font/sublima_bold"

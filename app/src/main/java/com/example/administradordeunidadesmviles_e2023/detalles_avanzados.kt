@@ -29,7 +29,7 @@ class detalles_avanzados : AppCompatActivity() {
                 var Hora = datoLeido?.get("horaRegistro") as CharSequence?
                 binding.txtFecha.text = "Fecha: "+Dia+" / "+Hora
                 binding.txtNeumaticos.text = datoLeido?.get("stateNeumaticos") as CharSequence?
-                binding.lblCarroceria.text = datoLeido?.get("stateCarroceria") as CharSequence?
+                binding.txtCarroceria.text = datoLeido?.get("stateCarroceria") as CharSequence?
                 binding.txtLimpieza.text = datoLeido?.get("stateLimpieza") as CharSequence?
                 binding.txtKilometraje.text = datoLeido?.get("stateKilometraje") as CharSequence?
 

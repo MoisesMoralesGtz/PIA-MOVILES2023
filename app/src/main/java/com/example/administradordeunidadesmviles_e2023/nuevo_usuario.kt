@@ -32,7 +32,7 @@ class nuevo_usuario : AppCompatActivity() {
 
                 Toast.makeText(this,"Todos los campos deben de estar completos", Toast.LENGTH_SHORT).show()
             }else {
-                if(binding.inputContra.text.toString() != binding.inputVerificar.toString()){
+                if(binding.inputContra.text.toString() != binding.inputVerificar.text.toString()){
                     Toast.makeText(this,"Ambas contraseñas deberán de coincidir.", Toast.LENGTH_SHORT).show()
                 }else{
                     insertDatos()

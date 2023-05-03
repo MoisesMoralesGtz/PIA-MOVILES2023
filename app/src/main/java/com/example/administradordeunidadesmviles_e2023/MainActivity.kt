@@ -39,12 +39,17 @@ class MainActivity : AppCompatActivity() {
                         //Contraseña y usuario coinciden
 
                         if(autorizado){
+                            val Usuario = ValoresGlobales()
+                            Usuario.setNombreUser(binding.TxtUser.text.toString())
+
                             if(permisos){
                                 val intent = Intent(this, main_administrador::class.java)
+                                intent.putExtra("user",binding.TxtUser.text.toString())
                                 startActivity(intent)
                                 overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
                             }else{
                                 val intent = Intent(this, main_empleado::class.java)
+                                intent.putExtra("user",binding.TxtUser.text.toString())
                                 startActivity(intent)
                                 overridePendingTransition(R.anim.from_right_in, R.anim.from_left_out)
                             }

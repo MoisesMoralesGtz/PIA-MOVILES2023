@@ -171,7 +171,7 @@ class solicitud_nuevas_cuentas : AppCompatActivity() {
                         "password" to binding.txtContra.text.toString(),
                         "nombreCompleto" to binding.txtNombre.text.toString(),
                         "autorizado" to true,
-                        "estaConectado" to true,
+                        "estaConectado" to false,
                         "esAdministrador" to permisos
                     )
                 )

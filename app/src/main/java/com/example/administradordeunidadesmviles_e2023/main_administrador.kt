@@ -5,15 +5,18 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.administradordeunidadesmviles_e2023.databinding.ActivityMainAdministradorBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class main_administrador : AppCompatActivity() {
     private lateinit var binding: ActivityMainAdministradorBinding
     private lateinit var firebaseAuth: FirebaseAuth
+    private val db = FirebaseFirestore.getInstance()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainAdministradorBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
 
         binding.btnEstadoU.setOnClickListener {
             val intent = Intent(this, estado_unidades::class.java)
